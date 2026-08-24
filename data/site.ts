@@ -1,14 +1,14 @@
 export const SITE_URL = "https://www.slprecordings.com";
 
 export const navItems = [
-  { href: "/", label: "home", key: "home" },
-  { href: "/catalog", label: "catalog", key: "catalog" },
-  { href: "/artists", label: "artists", key: "artists" },
-  { href: "/movie", label: "movie", key: "movie" },
-  { href: "/radio", label: "radio", key: "radio" },
-  { href: "/about", label: "about", key: "about" },
-  { href: "/contact", label: "contact", key: "contact" },
-  { href: "/202608interview", label: "dialogue", key: "dialogue" },
+  { href: "/", label: "Home", key: "home" },
+  { href: "/catalog", label: "Catalog", key: "catalog" },
+  { href: "/artists", label: "Artists", key: "artists" },
+  { href: "/movie", label: "Movie", key: "movie" },
+  { href: "/radio", label: "Radio", key: "radio" },
+  { href: "/about", label: "About", key: "about" },
+  { href: "/contact", label: "Contact", key: "contact" },
+  { href: "/202608interview", label: "Dialogue", key: "dialogue" },
 ] as const;
 
 export const socialLinks = [
