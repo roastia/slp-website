@@ -32,15 +32,16 @@ export default function HomePage() {
         <div className="wrap">
           <p className="eyebrow" data-reveal>NEW RELEASE — 2025/11/01</p>
           <div className="latest-grid">
-            <Image
-              src={latest.image}
-              alt={`${latest.title} ジャケット`}
-              width={1024}
-              height={1024}
-              sizes="(max-width: 560px) 270px, 280px"
-              priority
-              data-reveal
-            />
+            <Link href={latest.href} data-reveal>
+              <Image
+                src={latest.image}
+                alt={`${latest.title} ジャケット`}
+                width={1024}
+                height={1024}
+                sizes="(max-width: 560px) 270px, 280px"
+                priority
+              />
+            </Link>
             <div data-reveal>
               <h2>{latest.title}</h2>
               <p className="artist">{latest.artist}</p>
