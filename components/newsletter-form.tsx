@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 
 const ENDPOINT = "/api/newsletter";
 
-type Status = "idle" | "sending" | "success" | "error";
+type Status = "idle" | "sending" | "success" | "pending" | "error";
 
 export function NewsletterForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -20,7 +20,14 @@ export function NewsletterForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      if (response.ok) {
+      const data = await response.json().catch(() => null);
+      if (response.ok && data?.pendingReview) {
+        // The signup was received but needs a manual review before it's actually
+        // active (e.g. flagged by spam protection) — say so honestly rather than
+        // claiming it's already done.
+        setStatus("pending");
+        form.reset();
+      } else if (response.ok) {
         setStatus("success");
         form.reset();
       } else {
@@ -36,6 +43,8 @@ export function NewsletterForm() {
       <span className="label">Newsletter</span>
       {status === "success" ? (
         <span className="status">登録しました。ありがとうございます。</span>
+      ) : status === "pending" ? (
+        <span className="status">ご登録を受け付けました。確認のうえ反映いたします。</span>
       ) : (
         <form onSubmit={handleSubmit}>
           <input
