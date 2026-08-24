@@ -10,8 +10,7 @@ export default function ContactPage() {
     <main>
       <PageHeader title="Contact" />
       <section className="contact wrap">
-        <p data-reveal>SLPに関するご質問、ご感想などあれば以下のフォーム、またはメールにてご連絡ください。</p>
-        <a className="mail" href="mailto:info@slprecordings.com" data-reveal>info@slprecordings.com</a>
+        <p data-reveal>SLPに関するご質問、ご感想などあれば以下のフォームよりご連絡ください。</p>
         <ContactForm />
       </section>
     </main>
