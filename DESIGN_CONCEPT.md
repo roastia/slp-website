@@ -64,7 +64,8 @@
 
 ## 現状の既知の制約・未対応事項
 
-- （2026-08解消）Contactページに実際に送信できるフォームを実装した。Contact用フォーム（お名前・メールアドレス・お問い合わせ内容）とフッターのNewsletter用フォーム（メールアドレスのみ）をそれぞれ別のFormspreeエンドポイントに接続し、送信後はページ遷移せずその場に完了メッセージを表示する
+- （2026-08解消）Contactページに実際に送信できるフォームを実装した。Contact用フォーム（お名前・メールアドレス・お問い合わせ内容）はFormspree（`https://formspree.io/f/xbgrebpr`）に接続。フッターのNewsletter用フォーム（メールアドレスのみ）はButtondownに接続し、`app/api/newsletter/route.ts`（サーバー側）経由でButtondownの購読者作成APIを呼び出す構成にした。どちらも送信後はページ遷移せずその場に完了メッセージを表示する
+- Buttondown連携には環境変数 `BUTTONDOWN_API_KEY`（Buttondownの Settings > Programming > API keys で発行）が必要。Vercelのプロジェクト設定にのみ設定し、リポジトリにはコミットしない（`.env.example` 参照）。Buttondown APIの無料枠はAPI経由の登録が1日100件までの制限があるため、将来的に登録が増えた場合は上限緩和の相談か別途の受け口を検討する
 - 画像は現行WordPressサイト（slprecordings.com）のメディアURLをそのまま参照している状態。WordPressを完全に廃止する場合は、画像を別途ダウンロードして同じサーバー上に配置し直す必要がある
 - レスポンシブ対応（viewportメタタグ含む）は基本的に検証済みだが、実機での最終確認は未実施
 

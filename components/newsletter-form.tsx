@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-const ENDPOINT = "https://formspree.io/f/moeazzdw";
+const ENDPOINT = "/api/newsletter";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -12,12 +12,13 @@ export function NewsletterForm() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+    const email = new FormData(form).get("email");
     setStatus("sending");
     try {
       const response = await fetch(ENDPOINT, {
         method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
       });
       if (response.ok) {
         setStatus("success");
