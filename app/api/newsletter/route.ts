@@ -38,18 +38,23 @@ export async function POST(request: Request) {
 
   const ipAddress = getClientIp(request);
 
-  try {
-    const response = await fetch(BUTTONDOWN_ENDPOINT, {
+  async function subscribe(collisionBehavior?: "add" | "overwrite") {
+    return fetch(BUTTONDOWN_ENDPOINT, {
       method: "POST",
       headers: {
         Authorization: `Token ${apiKey}`,
         "Content-Type": "application/json",
+        ...(collisionBehavior ? { "X-Buttondown-Collision-Behavior": collisionBehavior } : {}),
       },
       body: JSON.stringify({
         email_address: email,
         ...(ipAddress ? { ip_address: ipAddress } : {}),
       }),
     });
+  }
+
+  try {
+    const response = await subscribe();
 
     if (response.ok) {
       return NextResponse.json({ ok: true });
@@ -57,11 +62,25 @@ export async function POST(request: Request) {
 
     const errorBody = await response.json().catch(() => null);
     const errorText = JSON.stringify(errorBody ?? "");
+    const errorCode = (errorBody as { code?: string } | null)?.code;
 
     // Buttondown returns 400 when the email is already subscribed; treat this as a
     // success from the visitor's perspective rather than an error.
     if (response.status === 400 && /already|exist/i.test(errorText)) {
       return NextResponse.json({ ok: true, alreadySubscribed: true });
+    }
+
+    // A previously-unsubscribed address is "suppressed" and Buttondown refuses to
+    // silently flip it back to active. Retry once with the collision-behavior
+    // header it asks for, which properly resubscribes the visitor.
+    if (response.status === 400 && errorCode === "subscriber_suppressed") {
+      const retryResponse = await subscribe("add");
+      if (retryResponse.ok) {
+        return NextResponse.json({ ok: true, resubscribed: true });
+      }
+      const retryErrorBody = await retryResponse.json().catch(() => null);
+      console.error("Buttondown resubscribe retry failed", retryResponse.status, retryErrorBody);
+      return NextResponse.json({ ok: false, error: "upstream_error" }, { status: 502 });
     }
 
     // Buttondown's spam firewall can flag a legitimate visitor (often due to a
@@ -70,7 +89,7 @@ export async function POST(request: Request) {
     // account owner can review and approve from the Buttondown dashboard. Since
     // the signup was captured either way, show the visitor a normal success
     // message instead of an error.
-    if (response.status === 400 && (errorBody as { code?: string } | null)?.code === "subscriber_blocked") {
+    if (response.status === 400 && errorCode === "subscriber_blocked") {
       console.error("Buttondown flagged subscriber as blocked (needs manual review)", email);
       return NextResponse.json({ ok: true, pendingReview: true });
     }
