@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { socialLinks } from "@/data/site";
+import { NewsletterForm } from "@/components/newsletter-form";
 
 export function SiteFooter() {
   return (
@@ -12,6 +13,7 @@ export function SiteFooter() {
             </Link>
           ))}
         </div>
+        <NewsletterForm />
         <div className="copyright">© SLP</div>
       </div>
     </footer>
