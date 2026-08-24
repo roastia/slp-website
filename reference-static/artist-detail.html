@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Artist Name] | Artists | SLP</title>
+<meta name="description" content="[Artist Name]のプロフィール、作品、活動情報を紹介します。">
+<!-- テンプレートのまま検索結果に出ないようにする。実ページ作成時はこの行を削除する。 -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="artists">
+
+<div id="site-header"></div>
+
+<main class="detail-page">
+  <section class="detail-hero wrap">
+    <a class="detail-back" href="artists.html">← artists</a>
+
+    <div class="detail-grid">
+      <figure class="detail-media">
+        <!-- CLAUDE: アーティスト画像とaltを差し替える。画像はカラーのまま使用する。 -->
+        <img src="https://www.slprecordings.com/wp-content/uploads/2025/10/impresshionists3000_横202507-1024x1024.jpg" alt="[Artist Name]" width="1024" height="1024" decoding="async">
+      </figure>
+
+      <div class="detail-intro">
+        <p class="detail-kicker">artist</p>
+        <!-- CLAUDE: アーティスト名を差し替える。 -->
+        <h1>[Artist Name]</h1>
+        <p class="detail-lead">アーティストの音楽性や活動を、専門用語に偏りすぎない短い文章で紹介します。2〜3文を目安にしてください。</p>
+        <div class="detail-actions" aria-label="Artist links">
+          <!-- CLAUDE: 実在するリンクがある項目だけa要素として設置する。 -->
+          <span class="detail-action">official site ↗</span>
+          <span class="detail-action">listen ↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-panel">
+    <div class="wrap detail-content-grid">
+      <article>
+        <p class="section-label">profile</p>
+        <p class="detail-copy">ここにアーティストのプロフィール本文を掲載します。経歴の羅列だけではなく、どのような音を作り、どのような姿勢で活動しているのかが伝わる内容にしてください。</p>
+      </article>
+
+      <dl class="detail-meta">
+        <div><dt>based in</dt><dd>Fukuoka, Japan</dd></div>
+        <div><dt>genres</dt><dd>Techno / Ambient / Electronica</dd></div>
+        <div><dt>activity</dt><dd>Producer / Live act</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="related wrap">
+    <p class="section-label">selected releases</p>
+    <div class="card-grid detail-card-grid">
+      <!-- CLAUDE: このカードを複製し、当該アーティストの作品だけを掲載する。 -->
+      <a class="card" href="catalog-detail.html">
+        <div class="frame"><img src="https://www.slprecordings.com/wp-content/uploads/2025/10/impressionists-1024x1024.jpeg" alt="[Release Title] ジャケット" width="1024" height="1024" loading="lazy" decoding="async"></div>
+        <span class="title">[Release Title]</span>
+        <div class="artist">[Artist Name]</div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="nav.js"></script>
+</body>
+</html>

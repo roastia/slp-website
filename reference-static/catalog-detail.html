@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Release Title] — [Artist Name] | SLP</title>
+<meta name="description" content="[Artist Name]による[Release Title]の作品情報、収録曲、配信リンクを紹介します。">
+<!-- テンプレートのまま検索結果に出ないようにする。実ページ作成時はこの行を削除する。 -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="catalog">
+
+<div id="site-header"></div>
+
+<main class="detail-page">
+  <section class="detail-hero wrap">
+    <a class="detail-back" href="catalog.html">← catalog</a>
+
+    <div class="detail-grid">
+      <figure class="detail-media">
+        <!-- CLAUDE: ジャケット画像とaltを差し替える。画像はカラーのまま使用する。 -->
+        <img src="https://www.slprecordings.com/wp-content/uploads/2025/10/impressionists-1024x1024.jpeg" alt="[Release Title] ジャケット" width="1024" height="1024" decoding="async">
+      </figure>
+
+      <div class="detail-intro">
+        <p class="detail-kicker">release</p>
+        <!-- CLAUDE: 作品名とアーティスト名を差し替える。 -->
+        <h1>[Release Title]</h1>
+        <p class="detail-artist">[Artist Name]</p>
+        <p class="detail-lead">作品の背景や音楽的な特徴を紹介します。検索結果にも内容が伝わる、具体的で簡潔な2〜3文を目安にしてください。</p>
+        <div class="detail-actions" aria-label="Release links">
+          <!-- CLAUDE: 実在する配信・購入先だけa要素として設置する。 -->
+          <span class="detail-action">listen ↗</span>
+          <span class="detail-action">buy ↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-panel">
+    <div class="wrap detail-content-grid">
+      <article>
+        <p class="section-label">tracklist</p>
+        <!-- 番号を装飾ラベルとして使わず、曲名と時間だけを表示する。 -->
+        <ol class="tracklist">
+          <li><span>[Track Title]</span><span>00:00</span></li>
+          <li><span>[Track Title]</span><span>00:00</span></li>
+          <li><span>[Track Title]</span><span>00:00</span></li>
+        </ol>
+      </article>
+
+      <dl class="detail-meta">
+        <div><dt>released</dt><dd>[YYYY.MM.DD]</dd></div>
+        <div><dt>format</dt><dd>Digital</dd></div>
+        <div><dt>credits</dt><dd>[Credits]</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="related wrap">
+    <p class="section-label">more from slp</p>
+    <div class="card-grid detail-card-grid">
+      <!-- CLAUDE: 関連作品がある場合だけカードを掲載する。 -->
+      <a class="card" href="catalog-detail.html">
+        <div class="frame"><img src="https://www.slprecordings.com/wp-content/uploads/2025/10/fromhere3000-1024x1024.jpeg" alt="[Related Release] ジャケット" width="1024" height="1024" loading="lazy" decoding="async"></div>
+        <span class="title">[Related Release]</span>
+        <div class="artist">[Artist Name]</div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="nav.js"></script>
+</body>
+</html>
