@@ -52,8 +52,20 @@ export async function POST(request: Request) {
     });
   }
 
-  async function reactivateAsRegular(emailAddress: string) {
-    return fetch(`${BUTTONDOWN_ENDPOINT}/${encodeURIComponent(emailAddress)}`, {
+  async function findSubscriberId(emailAddress: string): Promise<string | null> {
+    const lookupUrl = `${BUTTONDOWN_ENDPOINT}?email_address=${encodeURIComponent(emailAddress)}`;
+    const lookupResponse = await fetch(lookupUrl, {
+      headers: { Authorization: `Token ${apiKey}` },
+    });
+    if (!lookupResponse.ok) return null;
+    const lookupBody = await lookupResponse.json().catch(() => null);
+    const results = (lookupBody as { results?: Array<{ id?: string; email_address?: string }> } | null)?.results;
+    const match = results?.find((r) => r.email_address?.toLowerCase() === emailAddress.toLowerCase());
+    return match?.id ?? results?.[0]?.id ?? null;
+  }
+
+  async function reactivateAsRegular(subscriberId: string) {
+    return fetch(`${BUTTONDOWN_ENDPOINT}/${subscriberId}`, {
       method: "PATCH",
       headers: {
         Authorization: `Token ${apiKey}`,
@@ -85,7 +97,12 @@ export async function POST(request: Request) {
     // actually override this in practice). Explicitly PATCH the subscriber's
     // type back to "regular" instead, which is the documented way to resubscribe.
     if (response.status === 400 && errorCode === "subscriber_suppressed") {
-      const patchResponse = await reactivateAsRegular(email);
+      const subscriberId = await findSubscriberId(email);
+      if (!subscriberId) {
+        console.error("Buttondown resubscribe: could not find subscriber id for", email);
+        return NextResponse.json({ ok: false, error: "upstream_error" }, { status: 502 });
+      }
+      const patchResponse = await reactivateAsRegular(subscriberId);
       if (patchResponse.ok) {
         return NextResponse.json({ ok: true, resubscribed: true });
       }
