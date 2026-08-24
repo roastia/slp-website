@@ -277,6 +277,7 @@ export const releases: Release[] = [
       { label: "Amazon Music", href: "https://music.amazon.co.jp/albums/B0D3V6XJN2" },
       { label: "YouTube Music", href: "https://music.youtube.com/playlist?list=OLAK5uy_l_eHVxG5vp04IhZ8_GLl_9oavkUe237nE" },
       { label: "LINE MUSIC", href: "https://music.line.me/webapp/album/mb00000000039eba2f" },
+      { label: "その他の配信サービス", href: "https://linkcloud.mu/bfb90061" },
     ],
   },
 ];
