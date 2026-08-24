@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { socialLinks } from "@/data/site";
 import { NewsletterForm } from "@/components/newsletter-form";
+import { SocialIcon } from "@/components/social-icon";
 
 export function SiteFooter() {
   return (
@@ -9,6 +10,7 @@ export function SiteFooter() {
         <div>
           {socialLinks.map((item) => (
             <Link key={item.label} href={item.href} target="_blank" rel="noreferrer">
+              <SocialIcon label={item.label} />
               {item.label}
             </Link>
           ))}
