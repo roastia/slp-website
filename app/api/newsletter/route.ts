@@ -38,18 +38,28 @@ export async function POST(request: Request) {
 
   const ipAddress = getClientIp(request);
 
-  async function subscribe(collisionBehavior?: "add" | "overwrite") {
+  async function subscribe() {
     return fetch(BUTTONDOWN_ENDPOINT, {
       method: "POST",
       headers: {
         Authorization: `Token ${apiKey}`,
         "Content-Type": "application/json",
-        ...(collisionBehavior ? { "X-Buttondown-Collision-Behavior": collisionBehavior } : {}),
       },
       body: JSON.stringify({
         email_address: email,
         ...(ipAddress ? { ip_address: ipAddress } : {}),
       }),
+    });
+  }
+
+  async function reactivateAsRegular(emailAddress: string) {
+    return fetch(`${BUTTONDOWN_ENDPOINT}/${encodeURIComponent(emailAddress)}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Token ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ type: "regular" }),
     });
   }
 
@@ -70,16 +80,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true, alreadySubscribed: true });
     }
 
-    // A previously-unsubscribed address is "suppressed" and Buttondown refuses to
-    // silently flip it back to active. Retry once with the collision-behavior
-    // header it asks for, which properly resubscribes the visitor.
+    // A previously-unsubscribed address is "suppressed" and POSTing again won't
+    // reactivate it (Buttondown's suggested collision-behavior header does not
+    // actually override this in practice). Explicitly PATCH the subscriber's
+    // type back to "regular" instead, which is the documented way to resubscribe.
     if (response.status === 400 && errorCode === "subscriber_suppressed") {
-      const retryResponse = await subscribe("add");
-      if (retryResponse.ok) {
+      const patchResponse = await reactivateAsRegular(email);
+      if (patchResponse.ok) {
         return NextResponse.json({ ok: true, resubscribed: true });
       }
-      const retryErrorBody = await retryResponse.json().catch(() => null);
-      console.error("Buttondown resubscribe retry failed", retryResponse.status, retryErrorBody);
+      const patchErrorBody = await patchResponse.json().catch(() => null);
+      console.error("Buttondown resubscribe PATCH failed", patchResponse.status, patchErrorBody);
       return NextResponse.json({ ok: false, error: "upstream_error" }, { status: 502 });
     }
 
