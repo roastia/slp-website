@@ -6,6 +6,17 @@ function isValidEmail(value: unknown): value is string {
   return typeof value === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function getClientIp(request: Request): string | undefined {
+  // Vercel sets x-forwarded-for to "client, proxy1, proxy2, ...".
+  // The first entry is the original visitor's IP address.
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    const first = forwardedFor.split(",")[0]?.trim();
+    if (first) return first;
+  }
+  return request.headers.get("x-real-ip") ?? undefined;
+}
+
 export async function POST(request: Request) {
   const apiKey = process.env.BUTTONDOWN_API_KEY;
   if (!apiKey) {
@@ -25,6 +36,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "invalid_email" }, { status: 400 });
   }
 
+  const ipAddress = getClientIp(request);
+
   try {
     const response = await fetch(BUTTONDOWN_ENDPOINT, {
       method: "POST",
@@ -32,7 +45,10 @@ export async function POST(request: Request) {
         Authorization: `Token ${apiKey}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email_address: email }),
+      body: JSON.stringify({
+        email_address: email,
+        ...(ipAddress ? { ip_address: ipAddress } : {}),
+      }),
     });
 
     if (response.ok) {
