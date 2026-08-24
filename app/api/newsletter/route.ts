@@ -64,6 +64,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true, alreadySubscribed: true });
     }
 
+    // Buttondown's spam firewall can flag a legitimate visitor (often due to a
+    // shared/carrier IP address with a poor reputation) and reject the request,
+    // but it still records the subscriber with a "Blocked" status that the
+    // account owner can review and approve from the Buttondown dashboard. Since
+    // the signup was captured either way, show the visitor a normal success
+    // message instead of an error.
+    if (response.status === 400 && (errorBody as { code?: string } | null)?.code === "subscriber_blocked") {
+      console.error("Buttondown flagged subscriber as blocked (needs manual review)", email);
+      return NextResponse.json({ ok: true, pendingReview: true });
+    }
+
     console.error("Buttondown subscribe failed", response.status, errorBody);
     return NextResponse.json({ ok: false, error: "upstream_error" }, { status: 502 });
   } catch (error) {
