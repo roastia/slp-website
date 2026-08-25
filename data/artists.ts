@@ -16,6 +16,7 @@ export type Artist = {
   genres: string;
   activity: string;
   releaseSlugs: string[];
+  dialogues?: ArtistLink[];
 };
 
 export const artists: Artist[] = [
@@ -37,6 +38,9 @@ export const artists: Artist[] = [
     genres: "Ambient / Band / Post Rock",
     activity: "Band / Live act",
     releaseSlugs: ["impressionists-impressionists", "from-here_impressionists", "yohaku_impressionists"],
+    dialogues: [
+      { label: '山口発、ジャンルを越境するプロジェクト"impressionists"', href: "/202608interview/" },
+    ],
   },
   {
     slug: "keimabass",

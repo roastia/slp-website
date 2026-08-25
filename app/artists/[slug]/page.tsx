@@ -96,6 +96,19 @@ export default async function ArtistDetailPage({
         </div>
       </section>
 
+      {artist.dialogues && artist.dialogues.length > 0 ? (
+        <section className="dialogue wrap">
+          <p className="section-label" data-reveal>dialogue</p>
+          <div className="dialogue-list">
+            {artist.dialogues.map((item) => (
+              <p key={item.href} data-reveal>
+                <Link href={item.href}>{item.label}</Link>
+              </p>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {artistReleases.length > 0 ? (
         <section className="related wrap">
           <p className="section-label" data-reveal>selected releases</p>

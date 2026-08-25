@@ -424,6 +424,10 @@ a.detail-action:hover{transform:translateX(5px);}
 .tracklist li{display:flex;justify-content:space-between;gap:28px;font-size:.86rem;}
 .tracklist li span:last-child{font-size:.7rem;opacity:.48;white-space:nowrap;}
 .related{padding-top:clamp(64px,9vw,112px);padding-bottom:clamp(76px,11vw,132px);}
+.dialogue{padding-top:clamp(64px,9vw,112px);padding-bottom:0;}
+.dialogue-list p{margin:0;max-width:38em;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.7;}
+.dialogue-list a{text-decoration:underline;text-underline-offset:4px;transition:opacity var(--fast) ease;}
+.dialogue-list a:hover{opacity:.6;}
 .detail-card-grid{max-width:540px;}
 .detail-note{margin:0;font-size:.86rem;opacity:.55;}
 
