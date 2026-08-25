@@ -290,7 +290,7 @@ nav.site a:active{transform:scale(.94);}
   display:inline-block;
   margin:0;
   padding:4px 0;
-  font-size:clamp(1rem,1.8vw,1.35rem);
+  font-size:clamp(.85rem,1.4vw,1.05rem);
   font-weight:600;
   letter-spacing:-.025em;
   line-height:1.15;
