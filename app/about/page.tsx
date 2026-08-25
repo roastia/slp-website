@@ -14,7 +14,6 @@ export default function AboutPage() {
         <div data-reveal><p className="section-label">about</p></div>
         <div data-reveal>
           <h1 className="sr-only">About SLP</h1>
-          <p>SLPは福岡を拠点とするレコードレーベル。テクノからアンビエント、ポストロックまでジャンルを横断しながら、鳴らすべき信号だけを届ける。</p>
           <p className="meta">
             LOCATION — FUKUOKA, JAPAN<br />
             GENRES — TECHNO / AMBIENT / POST ROCK / MINIMAL / POP / ELECTRO / ELECTRONICA / DANCE / WORLD<br />
