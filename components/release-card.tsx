@@ -9,7 +9,7 @@ export function ReleaseCard({ release, showDate = false }: { release: Release; s
         <Image src={release.image} alt={`${release.title} ジャケット`} width={1024} height={1024} sizes="(max-width: 560px) 50vw, 20vw" />
         <span className={`tag tag-${release.tag.toLowerCase()}`}>{release.tag}</span>
       </div>
-      <span className="title">{release.title}</span>
+      <h2 className="title">{release.title}</h2>
       <div className="artist">{release.artist}</div>
       {showDate ? <div className="released">{release.releasedAt}</div> : null}
     </Link>
