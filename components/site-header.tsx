@@ -10,8 +10,8 @@ const MOTION_KEY = "slp-motion";
 
 function activeKey(pathname: string) {
   if (pathname === "/") return "home";
-  if (pathname.startsWith("/catalog") || pathname.startsWith("/from-here")) return "catalog";
-  if (pathname.startsWith("/artists") || pathname.startsWith("/impressionists")) return "artists";
+  if (pathname.startsWith("/catalog")) return "catalog";
+  if (pathname.startsWith("/artists")) return "artists";
   return navItems.find((item) => pathname.startsWith(item.href) && item.href !== "/")?.key;
 }
 

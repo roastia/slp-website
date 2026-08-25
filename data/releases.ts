@@ -76,8 +76,8 @@ export const releases: Release[] = [
     title: "from here",
     artist: "impressionists",
     artistSlug: "impressionists",
-    href: "/from-here_impressionists/",
-    legacyUrl: "/from-here_impressionists/",
+    href: "/catalog/from-here_impressionists/",
+    legacyUrl: "/catalog/from-here_impressionists/",
     image: "/images/releases/from-here.jpg",
     tag: "EP",
     lead:

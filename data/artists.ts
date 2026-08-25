@@ -24,8 +24,8 @@ export const artists: Artist[] = [
   {
     slug: "impressionists",
     name: "impressionists",
-    href: "/impressionists/",
-    legacyUrl: "/impressionists/",
+    href: "/artists/impressionists/",
+    legacyUrl: "/artists/impressionists/",
     image: "/images/artists/impressionists.jpg",
     lead:
       "山口県山口市を拠点としている5人組ポストロックバンドlittle phraseの橋本崇広を中心に、2024年から動き出したプロジェクト。アンビエントを基調としつつ、ビート、歌を取り入れるなど作風は多岐に渡る。制作、ライブにおいて柔軟かつ変則的なメンバー編成で活動中。",
