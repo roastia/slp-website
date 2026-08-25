@@ -10,7 +10,6 @@ export default function ContactPage() {
     <main>
       <PageHeader title="Contact" />
       <section className="contact wrap">
-        <p data-reveal>SLPに関するご質問、ご感想などあれば以下のフォームよりご連絡ください。</p>
         <ContactForm />
       </section>
     </main>
