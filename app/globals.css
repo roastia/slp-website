@@ -36,7 +36,7 @@ a{color:inherit;}
 img{max-width:100%;height:auto;}
 
 ::selection{background:var(--ink);color:var(--paper);}
-.about ::selection{background:var(--paper);color:var(--ink);}
+.about ::selection,.topstrip ::selection,.latest ::selection,.detail-panel ::selection{background:var(--paper);color:var(--ink);}
 :focus-visible{outline:2px solid currentColor;outline-offset:5px;}
 
 .wrap{
@@ -490,6 +490,7 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
     transition:opacity 260ms var(--ease),transform 260ms var(--ease),visibility 0s linear 260ms;
   }
   .menu-open nav.site{opacity:1;pointer-events:auto;transform:translateY(0);visibility:visible;transition-delay:0s;}
+  nav.site ::selection{background:var(--paper);color:var(--ink);}
   nav.site a{min-height:48px;padding:13px 10px;color:var(--paper);font-size:1rem;}
   nav.site a:hover,nav.site a.current{background:var(--paper);color:var(--ink);}
   .hero{padding-top:74px;padding-bottom:40px;}
