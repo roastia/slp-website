@@ -77,7 +77,7 @@ export default function InterviewPage() {
 
           <Image
             src="/images/interview/interview-02.jpg"
-            alt=""
+            alt="取材で使用したマイクとimpressionistsのCD、マグカップが並ぶテーブル"
             width={681}
             height={1024}
             data-reveal
@@ -127,7 +127,7 @@ export default function InterviewPage() {
 
           <Image
             src="/images/interview/interview-03.jpg"
-            alt=""
+            alt="山口の商店街を歩くimpressionistsの3人"
             width={1024}
             height={683}
             data-reveal
@@ -146,7 +146,7 @@ export default function InterviewPage() {
 
           <Image
             src="/images/interview/interview-04.jpg"
-            alt=""
+            alt="壁の前に並んで立つimpressionistsの3人"
             width={1024}
             height={683}
             data-reveal
@@ -168,7 +168,7 @@ export default function InterviewPage() {
 
           <Image
             src="/images/interview/interview-05.jpg"
-            alt=""
+            alt="カフェで談笑するimpressionistsの3人"
             width={1024}
             height={681}
             data-reveal
