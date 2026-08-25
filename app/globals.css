@@ -324,7 +324,7 @@ nav.site a:active{transform:scale(.94);}
 
 /* ---------- contact ---------- */
 .contact{flex:1;padding-top:clamp(46px,6vw,74px);padding-bottom:clamp(84px,12vw,150px);}
-.contact>p:first-child{max-width:32em;margin:0;font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:-.015em;}
+.contact>p:first-child{margin:0;font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:-.015em;white-space:nowrap;}
 .contact .mail{max-width:100%;margin-top:34px;background:var(--ink);color:var(--paper);font-size:clamp(.82rem,1.5vw,1rem);overflow-wrap:anywhere;text-align:center;}
 .contact .mail:hover{transform:translateX(6px);}
 .contact-form{max-width:34em;margin-top:56px;}
@@ -477,6 +477,7 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
 }
 
 @media (max-width:820px){
+  .contact>p:first-child{white-space:normal;max-width:32em;}
   body.menu-open{overflow:hidden;}
   body.menu-open footer.site{display:none;}
   .wrap{
