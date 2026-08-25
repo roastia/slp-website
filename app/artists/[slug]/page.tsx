@@ -76,30 +76,6 @@ export default async function ArtistDetailPage({
         </div>
       </section>
 
-      <section className="detail-panel">
-        <div className="wrap detail-content-grid">
-          <article data-reveal>
-            <p className="section-label">profile</p>
-            <p className="detail-copy" style={{ whiteSpace: "pre-line" }}>{artist.profile}</p>
-          </article>
-
-          <dl className="detail-meta" data-reveal>
-            <div>
-              <dt>based in</dt>
-              <dd>{artist.basedIn}</dd>
-            </div>
-            <div>
-              <dt>genres</dt>
-              <dd>{artist.genres}</dd>
-            </div>
-            <div>
-              <dt>activity</dt>
-              <dd>{artist.activity}</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
       {artist.dialogues && artist.dialogues.length > 0 ? (
         <section className="dialogue wrap">
           <p className="section-label" data-reveal>dialogue</p>
