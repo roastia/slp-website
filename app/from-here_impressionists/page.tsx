@@ -102,7 +102,7 @@ export default function FromHereReleasePage() {
           <p className="section-label" data-reveal>more from slp</p>
           <div className="card-grid detail-card-grid">
             {related.map((item) => (
-              <ReleaseCard key={item.slug} release={item} />
+              <ReleaseCard key={item.slug} release={item} showDate />
             ))}
           </div>
         </section>
