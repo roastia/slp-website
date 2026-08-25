@@ -113,7 +113,7 @@ export const releases: Release[] = [
     href: "/catalog/avt_/",
     legacyUrl: "/catalog/avt_/",
     image: "/images/releases/avt.jpg",
-    tag: "SINGLE",
+    tag: "LP",
     tracklist: [
       { title: "avt_001", duration: "02:08" },
       { title: "avt_002", duration: "01:39" },
@@ -189,7 +189,7 @@ export const releases: Release[] = [
     href: "/catalog/cc_keimabass/",
     legacyUrl: "/catalog/cc_keimabass/",
     image: "/images/releases/cc.jpg",
-    tag: "SINGLE",
+    tag: "LP",
     tracklist: [
       { title: "Netemo Sametemo", duration: "07:35" },
       { title: "SHUT UP AND PLAY THE PIANO", duration: "05:48" },
