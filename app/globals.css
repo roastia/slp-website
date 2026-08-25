@@ -577,7 +577,8 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
 .article-prose{max-width:700px;margin:0 auto;}
 .article-prose h1{font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.5;font-weight:700;margin:0 0 8px;}
 .article-prose .credit{font-size:.74rem;opacity:.5;margin-bottom:40px;}
-.article-prose .credit a{color:inherit;}
+.article-prose .credit a{color:inherit;text-decoration:underline;text-underline-offset:3px;transition:opacity var(--fast) ease;}
+.article-prose .credit a:hover{opacity:.6;}
 .article-prose h2{font-size:1.2rem;font-weight:700;margin:52px 0 18px;line-height:1.6;}
 .article-prose p{font-size:.98rem;line-height:1.9;margin:0 0 1.5em;}
 .article-prose .quote{font-weight:600;}
