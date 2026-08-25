@@ -270,12 +270,13 @@ nav.site a:active{transform:scale(.94);}
   top:8px;
   left:8px;
   padding:4px 7px;
-  background:var(--paper);
-  color:var(--ink);
   font-size:.58rem;
   font-weight:600;
   letter-spacing:.07em;
 }
+.card .tag-new{background:var(--ink);color:var(--paper);}
+.card .tag-lp{background:var(--paper);color:var(--ink);}
+.card .tag-ep{background:transparent;color:var(--ink);border:1px solid var(--ink);}
 .card .title{
   display:inline-block;
   padding:3px 0;

@@ -16,7 +16,7 @@ export type Release = {
   href: string;
   legacyUrl: string;
   image: string;
-  tag: "NEW" | "EP" | "SINGLE" | "LP";
+  tag: "NEW" | "EP" | "LP";
   lead?: string;
   tracklist: Track[];
   releasedAt: string;
@@ -158,7 +158,7 @@ export const releases: Release[] = [
     href: "/catalog/ordinarysingle_keimabass/",
     legacyUrl: "/catalog/ordinarysingle_keimabass/",
     image: "/images/releases/ordinary-single.jpg",
-    tag: "SINGLE",
+    tag: "EP",
     tracklist: [
       { title: "calm / purity (waves)", duration: "07:05" },
       { title: "will / faith (waves)", duration: "05:20" },
@@ -230,7 +230,7 @@ export const releases: Release[] = [
     href: "/catalog/rwotnc-a_keimabass/",
     legacyUrl: "/catalog/rwotnc-a_keimabass/",
     image: "/images/releases/rwotnc-a.jpg",
-    tag: "SINGLE",
+    tag: "EP",
     tracklist: [
       { title: "rwotnc-01", duration: "03:52" },
       { title: "rwotnc-02", duration: "04:12" },
@@ -263,7 +263,7 @@ export const releases: Release[] = [
     href: "/catalog/matatakukokyuu_keimabass/",
     legacyUrl: "/catalog/matatakukokyuu_keimabass/",
     image: "/images/releases/matatakukokyuu.jpg",
-    tag: "SINGLE",
+    tag: "EP",
     tracklist: [
       { title: "明", duration: "07:25" },
       { title: "バースデイ", duration: "04:13" },
