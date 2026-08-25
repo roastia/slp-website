@@ -23,6 +23,8 @@ export type Release = {
   format: string;
   credits: string;
   links: ReleaseLink[];
+  bandcampId?: number;
+  bandcampUrl?: string;
 };
 
 export const releases: Release[] = [
@@ -66,6 +68,8 @@ export const releases: Release[] = [
       { label: "レコチョク", href: "https://recochoku.jp/album/A1044405545" },
       { label: "Bandcamp", href: "https://slprecordings.bandcamp.com/" },
     ],
+    bandcampId: 548330267,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/impressionists",
   },
   {
     slug: "from-here_impressionists",
@@ -98,6 +102,8 @@ export const releases: Release[] = [
       { label: "レコチョク", href: "https://recochoku.jp/album/A1043924892" },
       { label: "Bandcamp", href: "https://slprecordings.bandcamp.com/" },
     ],
+    bandcampId: 803996957,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/from-here",
   },
   {
     slug: "avt_",
@@ -141,6 +147,8 @@ export const releases: Release[] = [
       { label: "ミュージックストア", href: "https://musicstore.auone.jp/s/album/1031212010" },
       { label: "レコチョク", href: "https://recochoku.jp/album/A1031212010" },
     ],
+    bandcampId: 133600591,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/avt",
   },
   {
     slug: "ordinarysingle_keimabass",
@@ -170,6 +178,8 @@ export const releases: Release[] = [
       { label: "ミュージックストア", href: "https://musicstore.auone.jp/s/album/1036869641" },
       { label: "レコチョク", href: "https://recochoku.jp/album/A1036869641" },
     ],
+    bandcampId: 747913250,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/ordinary-single-waves",
   },
   {
     slug: "cc_keimabass",
@@ -209,6 +219,8 @@ export const releases: Release[] = [
       { label: "ミュージックストア", href: "https://musicstore.auone.jp/s/album/1036810720" },
       { label: "レコチョク", href: "https://recochoku.jp/album/A1036810720" },
     ],
+    bandcampId: 2226566781,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/cc",
   },
   {
     slug: "rwotnc-a_keimabass",
@@ -240,6 +252,8 @@ export const releases: Release[] = [
       { label: "ミュージックストア", href: "https://musicstore.auone.jp/s/album/1036737013" },
       { label: "レコチョク", href: "https://recochoku.jp/album/A1036737013" },
     ],
+    bandcampId: 948409602,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/rwotnc-a",
   },
   {
     slug: "matatakukokyuu_keimabass",
@@ -272,6 +286,8 @@ export const releases: Release[] = [
       { label: "ミュージックストア", href: "https://musicstore.auone.jp/s/album/1036737030" },
       { label: "レコチョク", href: "https://recochoku.jp/album/A1036737030" },
     ],
+    bandcampId: 2804747851,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/--2",
   },
   {
     slug: "yohaku_impressionists",
@@ -313,6 +329,8 @@ export const releases: Release[] = [
       { label: "レコチョク", href: "https://recochoku.jp/album/A1035791016" },
       { label: "その他の配信サービス", href: "https://linkcloud.mu/bfb90061" },
     ],
+    bandcampId: 2411009458,
+    bandcampUrl: "https://slprecordings.bandcamp.com/album/-",
   },
 ];
 

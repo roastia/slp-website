@@ -398,6 +398,8 @@ nav.site a:active{transform:scale(.94);}
 .detail-artist a{text-decoration:underline;text-underline-offset:3px;transition:opacity var(--fast) ease;}
 .detail-artist a:hover{opacity:.6;}
 .detail-lead{max-width:34em;margin:28px 0 0;font-size:clamp(.92rem,1.35vw,1.08rem);line-height:1.75;opacity:.65;}
+.detail-bandcamp{margin-top:28px;max-width:400px;}
+.detail-bandcamp iframe{display:block;width:100%;}
 .detail-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
 .detail-action{
   display:inline-flex;

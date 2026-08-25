@@ -65,6 +65,17 @@ export default async function CatalogDetailPage({
               {artist ? <Link href={artist.href}>{release.artist}</Link> : release.artist}
             </p>
             {release.lead ? <p className="detail-lead">{release.lead}</p> : null}
+            {release.bandcampId ? (
+              <div className="detail-bandcamp" data-reveal>
+                <iframe
+                  title={`${release.title} by ${release.artist} — Bandcamp Player`}
+                  style={{ border: 0, width: "100%", height: 472 }}
+                  src={`https://bandcamp.com/EmbeddedPlayer/album=${release.bandcampId}/size=large/bgcol=000000/linkcol=ffffff/tracklist=true/artwork=small/transparent=true/`}
+                >
+                  <a href={release.bandcampUrl}>{release.title} by {release.artist}</a>
+                </iframe>
+              </div>
+            ) : null}
             {release.links.length > 0 ? (
               <div className="detail-actions" aria-label="Release links">
                 {release.links.map((link) => (
