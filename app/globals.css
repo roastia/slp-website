@@ -460,7 +460,7 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
 .footer-newsletter{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
 .footer-newsletter .label{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.48;}
 .footer-newsletter form{display:flex;gap:0;}
-.footer-newsletter input{min-width:180px;padding:7px 10px;background:rgba(0,0,0,.05);color:var(--ink);font-size:.68rem;}
+.footer-newsletter input{min-width:280px;padding:7px 10px;background:rgba(0,0,0,.05);color:var(--ink);font-size:.68rem;}
 .footer-newsletter button{padding:7px 13px;background:var(--ink);color:var(--paper);font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:transform var(--fast) var(--ease);}
 .footer-newsletter button:hover{transform:translateX(3px);}
 .footer-newsletter button:disabled{opacity:.5;}
