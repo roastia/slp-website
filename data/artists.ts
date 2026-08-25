@@ -1,6 +1,7 @@
 export type ArtistLink = {
   label: string;
   href: string;
+  date?: string;
 };
 
 export type Artist = {
@@ -39,7 +40,11 @@ export const artists: Artist[] = [
     activity: "Band / Live act",
     releaseSlugs: ["impressionists-impressionists", "from-here_impressionists", "yohaku_impressionists"],
     dialogues: [
-      { label: '山口発、ジャンルを越境するプロジェクト"impressionists"', href: "/202608interview/" },
+      {
+        label: '山口発、ジャンルを越境するプロジェクト"impressionists"',
+        href: "/202608interview/",
+        date: "2026.08.16",
+      },
     ],
   },
   {

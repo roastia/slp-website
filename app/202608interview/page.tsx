@@ -20,7 +20,7 @@ export default function InterviewPage() {
             3 人で鳴らす&quot;ライブの空気感&quot;を音源にしたセカンドアルバム『impressionists』
           </h1>
           <p className="credit" data-reveal>
-            撮影：<a href="https://kazumayoshiga.com/home">ヨシガカズマ</a> ／ 文・構成：奥雄祐（SLP）
+            2026.08.16　撮影：<a href="https://kazumayoshiga.com/home">ヨシガカズマ</a> ／ 文・構成：奥雄祐（SLP）
           </p>
 
           <Image

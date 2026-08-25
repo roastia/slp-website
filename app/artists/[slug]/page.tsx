@@ -103,6 +103,7 @@ export default async function ArtistDetailPage({
             {artist.dialogues.map((item) => (
               <p key={item.href} data-reveal>
                 <Link href={item.href}>{item.label}</Link>
+                {item.date ? <span className="dialogue-date">{item.date}</span> : null}
               </p>
             ))}
           </div>

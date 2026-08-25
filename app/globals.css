@@ -432,6 +432,7 @@ a.detail-action:hover{transform:translateX(5px);}
 .dialogue-list p{margin:0;max-width:38em;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.7;}
 .dialogue-list a{text-decoration:underline;text-underline-offset:4px;transition:opacity var(--fast) ease;}
 .dialogue-list a:hover{opacity:.6;}
+.dialogue-list .dialogue-date{display:block;font-size:.74rem;opacity:.5;margin-top:2px;}
 .detail-card-grid{max-width:540px;}
 .detail-note{margin:0;font-size:.86rem;opacity:.55;}
 
