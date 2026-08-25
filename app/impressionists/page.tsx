@@ -5,6 +5,7 @@ import { getArtistBySlug } from "@/data/artists";
 import { releases } from "@/data/releases";
 import { pageMetadata } from "@/lib/metadata";
 import { Button } from "@/components/ui/button";
+import { ReleaseCard } from "@/components/release-card";
 
 const artist = getArtistBySlug("impressionists")!;
 
@@ -90,20 +91,7 @@ export default function ImpressionistsArtistPage() {
         <p className="section-label" data-reveal>selected releases</p>
         <div className="card-grid detail-card-grid">
           {artistReleases.map((release) => (
-            <Link key={release.slug} className="card" href={release.href} data-reveal>
-              <div className="frame">
-                <Image
-                  src={release.image}
-                  alt={`${release.title} ジャケット`}
-                  width={1024}
-                  height={1024}
-                  sizes="(max-width: 560px) 50vw, 20vw"
-                  loading="lazy"
-                />
-              </div>
-              <span className="title">{release.title}</span>
-              <div className="artist">{release.artist}</div>
-            </Link>
+            <ReleaseCard key={release.slug} release={release} showDate />
           ))}
         </div>
       </section>
