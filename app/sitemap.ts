@@ -4,7 +4,18 @@ import { artists } from "@/data/artists";
 import { releases } from "@/data/releases";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/catalog/", "/artists/", "/movie/", "/radio/", "/about/", "/contact/", "/202608interview/"];
+  const staticPaths = [
+    "",
+    "/catalog/",
+    "/artists/",
+    "/movie/",
+    "/radio/",
+    "/about/",
+    "/contact/",
+    "/202608interview/",
+    "/utidn7u26ivqyfif/",
+    "/baddgfct2ida8gj4/",
+  ];
   const artistPaths = artists.map((artist) => artist.legacyUrl);
   const releasePaths = releases.map((release) => release.legacyUrl);
 

@@ -350,6 +350,13 @@ nav.site a:active{transform:scale(.94);}
 .contact-form .form-submit:hover{transform:translateX(6px);}
 .contact-form .form-submit:active{transform:scale(.96);}
 .contact-form .form-submit:disabled{opacity:.5;}
+
+/* ---------- download (legacy giveaway files) ---------- */
+.download{flex:1;padding-top:clamp(46px,6vw,74px);padding-bottom:clamp(84px,12vw,150px);}
+.download-instruction{margin:0 0 20px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.5;}
+.download-title{display:inline-block;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:600;letter-spacing:-.02em;color:var(--ink);text-decoration:underline;text-underline-offset:4px;transition:opacity var(--fast) ease;}
+.download-title:hover{opacity:.6;}
+.download-player{display:block;width:100%;max-width:480px;margin-top:32px;}
 .form-status{max-width:34em;margin-top:34px;font-size:.85rem;line-height:1.75;}
 .form-status.is-error{margin-top:20px;font-size:.7rem;line-height:1.75;opacity:.62;}
 
