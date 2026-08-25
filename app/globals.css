@@ -287,6 +287,7 @@ nav.site a:active{transform:scale(.94);}
   transition:background var(--fast) ease,color var(--fast) ease,padding var(--fast) var(--ease);
 }
 .card .artist{margin-top:5px;font-size:.69rem;opacity:.48;}
+.card .released{margin-top:2px;font-size:.62rem;opacity:.38;}
 .card h2{
   display:inline-block;
   margin:0;

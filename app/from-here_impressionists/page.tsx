@@ -5,6 +5,7 @@ import { releases, getReleaseBySlug } from "@/data/releases";
 import { getArtistBySlug } from "@/data/artists";
 import { pageMetadata } from "@/lib/metadata";
 import { Button } from "@/components/ui/button";
+import { ReleaseCard } from "@/components/release-card";
 
 const release = getReleaseBySlug("from-here_impressionists")!;
 
@@ -101,20 +102,7 @@ export default function FromHereReleasePage() {
           <p className="section-label" data-reveal>more from slp</p>
           <div className="card-grid detail-card-grid">
             {related.map((item) => (
-              <Link key={item.slug} className="card" href={item.href} data-reveal>
-                <div className="frame">
-                  <Image
-                    src={item.image}
-                    alt={`${item.title} ジャケット`}
-                    width={1024}
-                    height={1024}
-                    sizes="(max-width: 560px) 50vw, 20vw"
-                    loading="lazy"
-                  />
-                </div>
-                <span className="title">{item.title}</span>
-                <div className="artist">{item.artist}</div>
-              </Link>
+              <ReleaseCard key={item.slug} release={item} />
             ))}
           </div>
         </section>

@@ -17,7 +17,7 @@ export default function CatalogPage() {
       <section className="catalog wrap">
         <p className="section-label" data-reveal>releases</p>
         <div className="card-grid">
-          {releases.map((release) => <ReleaseCard key={release.slug} release={release} />)}
+          {releases.map((release) => <ReleaseCard key={release.slug} release={release} showDate />)}
         </div>
       </section>
     </main>
