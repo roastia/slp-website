@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { releases, getReleaseBySlug } from "@/data/releases";
+import { getArtistBySlug } from "@/data/artists";
 import { pageMetadata } from "@/lib/metadata";
 import { Button } from "@/components/ui/button";
 
@@ -40,6 +41,7 @@ export default async function CatalogDetailPage({
   const related = releases.filter(
     (item) => item.artistSlug === release.artistSlug && item.slug !== release.slug,
   );
+  const artist = getArtistBySlug(release.artistSlug);
 
   return (
     <main className="detail-page">
@@ -59,7 +61,9 @@ export default async function CatalogDetailPage({
           <div className="detail-intro" data-reveal>
             <p className="detail-kicker">release</p>
             <h1>{release.title}</h1>
-            <p className="detail-artist">{release.artist}</p>
+            <p className="detail-artist">
+              {artist ? <Link href={artist.href}>{release.artist}</Link> : release.artist}
+            </p>
             {release.lead ? <p className="detail-lead">{release.lead}</p> : null}
             {release.links.length > 0 ? (
               <div className="detail-actions" aria-label="Release links">
