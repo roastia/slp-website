@@ -34,7 +34,7 @@ export function SiteFooter() {
           {socialLinks.map((item) => (
             <Link key={item.label} href={item.href} target="_blank" rel="noreferrer">
               <SocialIcon label={item.label} />
-              {item.label}
+              <span className="link-label">{item.label}</span>
             </Link>
           ))}
         </div>
