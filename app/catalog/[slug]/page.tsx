@@ -7,6 +7,8 @@ import { getArtistBySlug } from "@/data/artists";
 import { pageMetadata } from "@/lib/metadata";
 import { Button } from "@/components/ui/button";
 import { ReleaseCard } from "@/components/release-card";
+import { JsonLd } from "@/components/json-ld";
+import { musicAlbumJsonLd } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return releases
@@ -46,6 +48,7 @@ export default async function CatalogDetailPage({
 
   return (
     <main className="detail-page">
+      <JsonLd data={musicAlbumJsonLd(release)} />
       <section className="detail-hero wrap">
         <Link className="detail-back" href="/catalog" data-reveal>← catalog</Link>
         <div className="detail-grid">

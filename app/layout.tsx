@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSystem } from "@/components/motion-system";
+import { JsonLd } from "@/components/json-ld";
+import { organizationJsonLd } from "@/lib/structured-data";
 import { SITE_URL } from "@/data/site";
 import "./globals.css";
 
@@ -32,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
+        <JsonLd data={organizationJsonLd()} />
         <SiteHeader />
         {children}
         <SiteFooter />

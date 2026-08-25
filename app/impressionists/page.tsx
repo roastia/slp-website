@@ -6,6 +6,8 @@ import { releases } from "@/data/releases";
 import { pageMetadata } from "@/lib/metadata";
 import { Button } from "@/components/ui/button";
 import { ReleaseCard } from "@/components/release-card";
+import { JsonLd } from "@/components/json-ld";
+import { musicGroupJsonLd } from "@/lib/structured-data";
 
 const artist = getArtistBySlug("impressionists")!;
 
@@ -21,6 +23,7 @@ export default function ImpressionistsArtistPage() {
 
   return (
     <main className="detail-page">
+      <JsonLd data={musicGroupJsonLd(artist)} />
       <section className="detail-hero wrap">
         <Link className="detail-back" href="/artists" data-reveal>← artists</Link>
         <div className="detail-grid">
