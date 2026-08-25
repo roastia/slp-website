@@ -21,6 +21,7 @@ export function SiteHeader() {
   const [motionEnabled, setMotionEnabled] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const current = activeKey(pathname);
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -90,7 +91,11 @@ export function SiteHeader() {
 
       <header className="site">
         <div className="wrap">
-          <Link className="logo" href="/" aria-label="SLP home" onClick={() => setMenuOpen(false)}>SLP</Link>
+          {isHome ? (
+            <span className="logo" aria-hidden="true" style={{ visibility: "hidden" }}>SLP</span>
+          ) : (
+            <Link className="logo" href="/" aria-label="SLP home" onClick={() => setMenuOpen(false)}>SLP</Link>
+          )}
           <Button
             type="button"
             className="menu-toggle"
