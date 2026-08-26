@@ -533,15 +533,15 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
   .latest-grid img{max-width:270px;}
   .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 12px;}
   .movie-grid{grid-template-columns:1fr;}
-  footer.site{padding:16px 0;}
+  footer.site{padding:10px 0;}
   footer.site .wrap{display:block;}
-  footer.site a{padding:6px;margin-right:2px;}
+  footer.site a{padding:4px;margin-right:1px;}
   .social-icon{width:24px;height:24px;}
   footer.site .link-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   footer.site .copyright{display:none;}
-  .footer-newsletter{margin-top:10px;gap:8px;}
+  .footer-newsletter{margin-top:6px;gap:4px;}
   .footer-newsletter input{min-width:0;flex:1;}
-  .footer-newsletter input,.footer-newsletter button{padding:6px 9px;}
+  .footer-newsletter input,.footer-newsletter button{padding:5px 8px;}
   .detail-hero{padding-top:28px;padding-bottom:68px;}
   .detail-grid{margin-top:30px;gap:34px;}
   .detail-intro h1{font-size:clamp(1.6rem,8.5vw,2.8rem);}
