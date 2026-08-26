@@ -63,6 +63,9 @@ export default async function ArtistDetailPage({
             <p className="detail-kicker">artist</p>
             <h1>{artist.name}</h1>
             <p className="detail-lead">{artist.lead}</p>
+            {artist.profile ? (
+              <p className="detail-members" style={{ whiteSpace: "pre-line" }}>{artist.profile}</p>
+            ) : null}
             {artist.links.length > 0 ? (
               <div className="detail-actions" aria-label="Artist links">
                 {artist.links.map((link) => (
