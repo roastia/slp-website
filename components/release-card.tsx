@@ -4,14 +4,16 @@ import type { Release } from "@/data/releases";
 
 export function ReleaseCard({ release, showDate = false }: { release: Release; showDate?: boolean }) {
   return (
-    <Link className="card" href={release.href} data-reveal>
-      <div className="frame">
-        <Image src={release.image} alt={`${release.title} ジャケット`} width={1024} height={1024} sizes="(max-width: 560px) 50vw, 20vw" />
-        <span className={`tag tag-${release.tag.toLowerCase()}`}>{release.tag}</span>
-      </div>
-      <h2 className="title">{release.title}</h2>
-      <div className="artist">{release.artist}</div>
+    <div className="card" data-reveal>
+      <Link className="card-link" href={release.href} aria-label={`${release.title} — ${release.artist}`}>
+        <div className="frame">
+          <Image src={release.image} alt={`${release.title} ジャケット`} width={1024} height={1024} sizes="(max-width: 560px) 50vw, 20vw" />
+          <span className={`tag tag-${release.tag.toLowerCase()}`}>{release.tag}</span>
+        </div>
+        <h2 className="title">{release.title}</h2>
+      </Link>
+      <Link className="artist" href={`/artists/${release.artistSlug}/`}>{release.artist}</Link>
       {showDate ? <div className="released">{release.releasedAt}</div> : null}
-    </Link>
+    </div>
   );
 }

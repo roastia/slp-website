@@ -44,7 +44,9 @@ export default function HomePage() {
             </Link>
             <div data-reveal>
               <h2>{latest.title}</h2>
-              <p className="artist">{latest.artist}</p>
+              <p className="artist">
+                <Link href={`/artists/${latest.artistSlug}/`}>{latest.artist}</Link>
+              </p>
               <Link className="cta" href="/catalog">catalogを見る →</Link>
             </div>
           </div>
