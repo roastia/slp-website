@@ -30,7 +30,7 @@ export function SiteFooter() {
   return (
     <footer className="site" ref={footerRef}>
       <div className="wrap">
-        <div>
+        <div className="footer-social">
           {socialLinks.map((item) => (
             <Link key={item.label} href={item.href} target="_blank" rel="noreferrer">
               <SocialIcon label={item.label} />
