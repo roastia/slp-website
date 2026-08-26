@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+:root{
+  --ink:#000000;
+  --paper:#ffffff;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --fast:180ms;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:sans-serif;background:#eee;}
+button,input,textarea,select{font:inherit;}
+button{border:0;}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding-left:34px;padding-right:34px;}
+footer.site{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:28px 0;background:var(--paper);color:var(--ink);font-size:.68rem;letter-spacing:.025em;}
+footer.site .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+footer.site a{display:inline-flex;align-items:center;gap:7px;margin-right:5px;padding:5px 7px;text-decoration:none;transition:background var(--fast) ease,color var(--fast) ease;}
+.social-icon{display:inline-flex;width:30px;height:30px;flex-shrink:0;background:#ccc;}
+footer.site a:hover{background:var(--ink);color:var(--paper);}
+footer.site .copyright{padding:5px 0;opacity:.48;}
+.footer-newsletter{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-newsletter .label{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.48;}
+.footer-newsletter form{display:flex;gap:0;}
+.footer-newsletter input{min-width:280px;padding:7px 10px;background:rgba(0,0,0,.05);color:var(--ink);font-size:.68rem;}
+.footer-newsletter button{padding:7px 13px;background:var(--ink);color:var(--paper);font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:transform var(--fast) var(--ease);}
+.footer-newsletter button:hover{transform:translateX(3px);}
+</style>
+</head>
+<body>
+<div style="height:1500px;">scroll area</div>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <a href="#"><span class="social-icon"></span>X</a>
+      <a href="#"><span class="social-icon"></span>Instagram</a>
+      <a href="#"><span class="social-icon"></span>Facebook</a>
+      <a href="#"><span class="social-icon"></span>Bandcamp</a>
+      <a href="#"><span class="social-icon"></span>YouTube</a>
+      <a href="#"><span class="social-icon"></span>SUZURI</a>
+    </div>
+    <div class="footer-newsletter">
+      <span class="label">Newsletter</span>
+      <form>
+        <input type="email" placeholder="you@example.com" aria-label="メールアドレス" required />
+        <button type="submit">登録する</button>
+      </form>
+    </div>
+    <div class="copyright">© SLP</div>
+  </div>
+</footer>
+</body>
+</html>
