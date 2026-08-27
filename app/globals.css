@@ -331,7 +331,7 @@ nav.site a:active{transform:scale(.94);}
 .contact{flex:1;padding-top:clamp(46px,6vw,74px);padding-bottom:clamp(84px,12vw,150px);}
 .contact .mail{max-width:100%;margin-top:34px;background:var(--ink);color:var(--paper);font-size:clamp(.82rem,1.5vw,1rem);overflow-wrap:anywhere;text-align:center;}
 .contact .mail:hover{transform:translateX(6px);}
-.contact-form{max-width:34em;margin-top:56px;}
+.contact-form{max-width:34em;margin-top:28px;}
 .contact-form .field{margin-bottom:24px;}
 .contact-form label{display:block;margin-bottom:9px;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.52;}
 .contact-form input,.contact-form textarea{width:100%;padding:14px 16px;background:rgba(0,0,0,.045);color:var(--ink);transition:background 180ms ease;}
