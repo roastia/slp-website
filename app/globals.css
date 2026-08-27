@@ -101,9 +101,7 @@ html[data-motion="off"] .reveal{opacity:1;transform:none;transition:none;}
 header.site{
   background:var(--paper);
   padding:16px 0;
-  transition:padding 260ms var(--ease);
 }
-.scrolled header.site{padding:10px 0;}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;}
 .logo{
   display:inline-flex;
@@ -491,7 +489,6 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
   .topstrip .wrap{grid-template-columns:1fr auto;gap:12px;}
   .top-controls{gap:10px;}
   header.site{padding:13px 0;}
-  .scrolled header.site{padding:9px 0;}
   .menu-toggle{display:block;}
   nav.site{
     position:absolute;
