@@ -27,7 +27,7 @@ export default function InterviewPage() {
 
           <ShareButtons
             url={new URL("/202608interview/", SITE_URL).toString()}
-            title={'山口発、ジャンルを越境するプロジェクト"impressionists" | SLP'}
+            title={'山口発、ジャンルを越境するプロジェクト"impressionists" 3人で鳴らす"ライブの空気感"を音源にしたセカンドアルバム『impressionists』 | SLP'}
           />
 
           <Image
