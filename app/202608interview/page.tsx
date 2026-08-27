@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { pageMetadata } from "@/lib/metadata";
+import { SITE_URL } from "@/data/site";
+import { ShareButtons } from "@/components/share-buttons";
 
 export const metadata: Metadata = pageMetadata(
   '山口発、ジャンルを越境するプロジェクト"impressionists"',
@@ -22,6 +24,11 @@ export default function InterviewPage() {
           <p className="credit" data-reveal>
             2026.08.16　撮影：<a href="https://kazumayoshiga.com/home">ヨシガカズマ</a> ／ 文・構成：奥雄祐（SLP）
           </p>
+
+          <ShareButtons
+            url={new URL("/202608interview/", SITE_URL).toString()}
+            title={'山口発、ジャンルを越境するプロジェクト"impressionists" | SLP'}
+          />
 
           <Image
             src="/images/interview/interview-01.jpg"
