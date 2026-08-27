@@ -366,7 +366,7 @@ nav.site a:active{transform:scale(.94);}
 
 /* ---------- artist / catalog detail templates ---------- */
 .detail-page{flex:1;}
-.detail-hero{padding-top:clamp(34px,5vw,64px);padding-bottom:clamp(64px,9vw,116px);}
+.detail-hero{padding-top:clamp(17px,2.5vw,32px);padding-bottom:clamp(32px,4.5vw,58px);}
 .detail-back{
   display:inline-flex;
   min-height:38px;
@@ -441,8 +441,8 @@ a.detail-action:hover{transform:translateX(5px);}
 .tracklist{display:grid;gap:16px;max-width:36em;margin:0;padding:0;list-style:none;}
 .tracklist li{display:flex;justify-content:space-between;gap:28px;font-size:.86rem;}
 .tracklist li span:last-child{font-size:.7rem;opacity:.48;white-space:nowrap;}
-.related{padding-top:clamp(64px,9vw,112px);padding-bottom:clamp(76px,11vw,132px);}
-.dialogue{padding-top:clamp(64px,9vw,112px);padding-bottom:0;}
+.related{padding-top:clamp(32px,4.5vw,56px);padding-bottom:clamp(38px,5.5vw,66px);}
+.dialogue{padding-top:clamp(32px,4.5vw,56px);padding-bottom:0;}
 .dialogue-list p{margin:0;max-width:38em;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.7;}
 .dialogue-list a{text-decoration:underline;text-underline-offset:4px;transition:opacity var(--fast) ease;}
 .dialogue-list a:hover{opacity:.6;}
