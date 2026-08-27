@@ -428,6 +428,24 @@ nav.site a:active{transform:scale(.94);}
 }
 a.detail-action{transition:transform var(--fast) var(--ease);}
 a.detail-action:hover{transform:translateX(5px);}
+.share-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:24px;}
+.share-label{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.48;}
+.share-button{
+  display:inline-flex;
+  width:34px;
+  height:34px;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  background:var(--ink);
+  color:var(--paper);
+  border:0;
+  cursor:pointer;
+  transition:transform var(--fast) var(--ease);
+}
+.share-button svg{display:block;width:16px;height:16px;}
+.share-button:hover{transform:translateY(-3px);}
+.share-status{font-size:.65rem;opacity:.6;}
 .detail-panel{background:var(--ink);color:var(--paper);padding:clamp(60px,8vw,104px) 0;}
 .detail-content-grid{display:grid;grid-template-columns:1.3fr .8fr;gap:clamp(48px,9vw,132px);align-items:start;}
 .detail-panel .section-label{color:var(--paper);opacity:.55;}
@@ -582,6 +600,7 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
 
 @media (pointer:coarse){
   nav.site a,.menu-toggle,.latest a.cta,.contact .mail,.contact-form .form-submit,.contact-form input,.footer-newsletter button,.footer-newsletter input{min-height:44px;}
+  .share-button{min-width:44px;min-height:44px;}
   .card .frame{margin-bottom:11px;}
 }
 

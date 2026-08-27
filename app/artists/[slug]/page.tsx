@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { artists, getArtistBySlug } from "@/data/artists";
 import { releases } from "@/data/releases";
 import { pageMetadata } from "@/lib/metadata";
+import { SITE_URL } from "@/data/site";
+import { ShareButtons } from "@/components/share-buttons";
 import { Button } from "@/components/ui/button";
 import { ReleaseCard } from "@/components/release-card";
 import { JsonLd } from "@/components/json-ld";
@@ -75,6 +77,10 @@ export default async function ArtistDetailPage({
                 ))}
               </div>
             ) : null}
+            <ShareButtons
+              url={new URL(artist.legacyUrl, SITE_URL).toString()}
+              title={`${artist.name} | SLP`}
+            />
           </div>
         </div>
       </section>

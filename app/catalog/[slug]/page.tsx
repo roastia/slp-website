@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { releases, getReleaseBySlug } from "@/data/releases";
 import { getArtistBySlug } from "@/data/artists";
 import { pageMetadata } from "@/lib/metadata";
+import { SITE_URL } from "@/data/site";
+import { ShareButtons } from "@/components/share-buttons";
 import { Button } from "@/components/ui/button";
 import { ReleaseCard } from "@/components/release-card";
 import { JsonLd } from "@/components/json-ld";
@@ -89,6 +91,10 @@ export default async function CatalogDetailPage({
                 ))}
               </div>
             ) : null}
+            <ShareButtons
+              url={new URL(release.legacyUrl, SITE_URL).toString()}
+              title={`${release.title} — ${release.artist} | SLP`}
+            />
           </div>
         </div>
       </section>
