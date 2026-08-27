@@ -17,7 +17,7 @@ const videos = [
 export default function MoviePage() {
   return (
     <main>
-      <PageHeader title="Movie" description="SLPアーティストによる映像作品" />
+      <PageHeader title="Movie" />
       <section className="movie wrap">
         <div className="movie-grid">
           {videos.map((id, index) => (

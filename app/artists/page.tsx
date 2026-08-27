@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(
 export default function ArtistsPage() {
   return (
     <main>
-      <PageHeader title="Artists" description="SLPに所属するアーティスト" />
+      <PageHeader title="Artists" />
       <section className="artists wrap">
         <p className="section-label" data-reveal>artists</p>
         <div className="card-grid">

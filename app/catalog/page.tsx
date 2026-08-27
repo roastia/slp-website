@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(
 export default function CatalogPage() {
   return (
     <main>
-      <PageHeader title="Catalog" description="SLPからリリースされた作品一覧" />
+      <PageHeader title="Catalog" />
       <section className="catalog wrap">
         <p className="section-label" data-reveal>releases</p>
         <div className="card-grid">
