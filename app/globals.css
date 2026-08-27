@@ -245,7 +245,7 @@ nav.site a:active{transform:scale(.94);}
   letter-spacing:.17em;
   text-transform:uppercase;
 }
-.catalog,.artists{padding-top:clamp(48px,7vw,82px);padding-bottom:clamp(64px,9vw,112px);}
+.catalog,.artists{padding-top:clamp(24px,3.5vw,41px);padding-bottom:clamp(64px,9vw,112px);}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:34px 18px;}
 .card{position:relative;display:block;color:var(--ink);text-decoration:none;}
 .card-link{display:block;color:inherit;text-decoration:none;}
@@ -313,7 +313,7 @@ nav.site a:active{transform:scale(.94);}
 .card:active img{transform:scale(1.025);}
 
 /* ---------- movie ---------- */
-.movie{padding-top:clamp(48px,7vw,82px);padding-bottom:clamp(64px,9vw,112px);}
+.movie{padding-top:clamp(24px,3.5vw,41px);padding-bottom:clamp(64px,9vw,112px);}
 .movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:28px 18px;}
 .movie-item{position:relative;overflow:hidden;background:var(--ink);}
 .movie-item .frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;transition:transform 420ms var(--ease);}
@@ -328,7 +328,7 @@ nav.site a:active{transform:scale(.94);}
 .about .section-label{color:var(--paper);font-size:.7rem;letter-spacing:.18em;opacity:.6;}
 
 /* ---------- contact ---------- */
-.contact{flex:1;padding-top:clamp(46px,6vw,74px);padding-bottom:clamp(84px,12vw,150px);}
+.contact{flex:1;padding-top:clamp(23px,3vw,37px);padding-bottom:clamp(84px,12vw,150px);}
 .contact .mail{max-width:100%;margin-top:34px;background:var(--ink);color:var(--paper);font-size:clamp(.82rem,1.5vw,1rem);overflow-wrap:anywhere;text-align:center;}
 .contact .mail:hover{transform:translateX(6px);}
 .contact-form{max-width:34em;margin-top:28px;}
@@ -356,7 +356,7 @@ nav.site a:active{transform:scale(.94);}
 .contact-form .form-submit:disabled{opacity:.5;}
 
 /* ---------- download (legacy giveaway files) ---------- */
-.download{flex:1;padding-top:clamp(46px,6vw,74px);padding-bottom:clamp(84px,12vw,150px);}
+.download{flex:1;padding-top:clamp(23px,3vw,37px);padding-bottom:clamp(84px,12vw,150px);}
 .download-instruction{margin:0 0 20px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.5;}
 .download-title{display:inline-block;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:600;letter-spacing:-.02em;color:var(--ink);text-decoration:underline;text-underline-offset:4px;transition:opacity var(--fast) ease;}
 .download-title:hover{opacity:.6;}
@@ -595,7 +595,7 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
 }
 
 /* ---------- radio ---------- */
-.radio{padding-top:clamp(48px,7vw,82px);padding-bottom:clamp(64px,9vw,112px);}
+.radio{padding-top:clamp(24px,3.5vw,41px);padding-bottom:clamp(64px,9vw,112px);}
 .radio-list{display:flex;flex-direction:column;gap:16px;max-width:700px;}
 .radio-list iframe{border-radius:8px;}
 
