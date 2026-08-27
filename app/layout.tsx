@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   verification: {
     // Google Search Consoleの「所有権の確認」→「HTMLタグ」で発行される
     // content="xxxxx" の xxxxx 部分だけをここに貼り付けてください。
-    google: "REPLACE_WITH_GOOGLE_VERIFICATION_CODE",
+    google: "8wiFbZrJpF5UOYGQfavVn9rAZiyoOkJv09s-pvE6Fts",
   },
 };
 
