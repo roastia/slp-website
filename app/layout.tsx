@@ -35,6 +35,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+        {/*
+          Fontshareはself-host（next/font/local化）ができれば理想だが、
+          このプロジェクトの作業環境からapi.fontshare.comへのネットワークアクセスが
+          できず、フォントファイルを取得できないため断念。preloadでCSS取得の
+          優先度を上げることで、体感速度への影響を軽減している。
+        */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
+        />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
