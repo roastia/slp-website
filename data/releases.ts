@@ -55,7 +55,7 @@ export const releases: Release[] = [
     ],
     releasedAt: "2025.11.01",
     format: "Digital",
-    credits: "℗ 2025 SLP\nEngineered by 奥雄祐",
+    credits: "℗ 2025 SLP",
     links: [
       { label: "Spotify", href: "https://open.spotify.com/intl-ja/album/34VpMev4iPnctoQt7ZMPxU" },
       { label: "Apple Music", href: "https://music.apple.com/jp/album/impressionists/1845996556" },
