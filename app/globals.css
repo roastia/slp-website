@@ -176,7 +176,7 @@ nav.site a:active{transform:scale(.94);}
 .hero .sub::-webkit-scrollbar{display:none;}
 
 /* ---------- page titles ---------- */
-.page-header{padding-top:clamp(62px,9vw,108px);padding-bottom:4px;}
+.page-header{padding-top:clamp(31px,4.5vw,54px);padding-bottom:4px;}
 .page-header h1{
   margin:0;
   font-size:clamp(2rem,5vw,4.35rem);
@@ -532,7 +532,7 @@ footer.site .copyright{padding:5px 0;opacity:.48;}
 @media (max-width:560px){
   .topstrip{font-size:.58rem;}
   nav.site{grid-template-columns:1fr 1fr;}
-  .page-header{padding-top:54px;}
+  .page-header{padding-top:27px;}
   .page-header h1{font-size:clamp(1.9rem,10vw,3rem);}
   .latest-grid{grid-template-columns:1fr;}
   .latest-grid img{max-width:270px;}
