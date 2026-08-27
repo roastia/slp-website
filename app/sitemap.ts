@@ -13,8 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/",
     "/contact/",
     "/202608interview/",
-    "/utidn7u26ivqyfif/",
-    "/baddgfct2ida8gj4/",
   ];
   const artistPaths = artists.map((artist) => artist.legacyUrl);
   const releasePaths = releases.map((release) => release.legacyUrl);

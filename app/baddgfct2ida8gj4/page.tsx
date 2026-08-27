@@ -5,11 +5,14 @@ import { pageMetadata } from "@/lib/metadata";
 const fileName = "old cartoon(Oku Yusuke Remix).wav";
 const fileUrl = "/downloads/old-cartoon-oku-yusuke-remix.wav";
 
-export const metadata: Metadata = pageMetadata(
-  "Download — old cartoon(Oku Yusuke Remix)",
-  "old cartoon(Oku Yusuke Remix).wav を無料でダウンロードできます。",
-  "/baddgfct2ida8gj4/",
-);
+export const metadata: Metadata = {
+  ...pageMetadata(
+    "Download — old cartoon(Oku Yusuke Remix)",
+    "old cartoon(Oku Yusuke Remix).wav を無料でダウンロードできます。",
+    "/baddgfct2ida8gj4/",
+  ),
+  robots: { index: false, follow: false },
+};
 
 export default function OldCartoonRemixDownloadPage() {
   return (

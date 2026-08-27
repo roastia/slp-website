@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSystem } from "@/components/motion-system";
@@ -14,6 +16,11 @@ export const metadata: Metadata = {
   applicationName: "SLP",
   openGraph: { siteName: "SLP", locale: "ja_JP", type: "website" },
   twitter: { card: "summary_large_image" },
+  verification: {
+    // Google Search Consoleの「所有権の確認」→「HTMLタグ」で発行される
+    // content="xxxxx" の xxxxx 部分だけをここに貼り付けてください。
+    google: "REPLACE_WITH_GOOGLE_VERIFICATION_CODE",
+  },
 };
 
 export const viewport: Viewport = {
@@ -39,6 +46,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <SiteFooter />
         <MotionSystem />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
