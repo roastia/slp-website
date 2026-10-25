@@ -126,7 +126,7 @@ reference-static/           移行前の静的HTML版。実装の参照専用（
 1. `DESIGN_CONCEPT.md` — デザインルールと決定経緯（白黒2色のみ、線を使わない、General Sans統一 等）
 2. `HANDOFF_START_HERE.md` — プロジェクトの目的と、作成当時の完成/未完成状況
 3. `CLAUDE_HANDOFF.md` — 対象ページ、旧URL一覧、実装要件
-4. `CLAUDE.md` — AIアシスタント向けの作業ルール（非交渉事項、技術ルール、検証手順）
+4. `CLAUDE.md` — AIアシスタント向けの作業ルール（git pull→修正→commit→pushコマンド提示の手順、デザインの非交渉事項、技術ルール、検証手順）
 5. `PROMPT_FOR_CLAUDE.md` — 上記を踏まえた依頼プロンプトの例
 
 **注意**: `HANDOFF_START_HERE.md` と `CLAUDE_HANDOFF.md` は「Artist詳細ページ3組・Catalog詳細ページ8作品が未着手」という前提で書かれているが、現時点ではすべて実装済み（上記ディレクトリ構成を参照）。着手当時のスナップショットのため、現状と食い違う記述がある点に注意。

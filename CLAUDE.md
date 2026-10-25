@@ -1,52 +1,62 @@
 # Claude project instructions
 
-This repository is the SLP record-label website. The visual design is already approved. Your task is to complete the missing content pages without redesigning the site.
+このリポジトリは、福岡のレコードレーベル SLP のホームページです（Next.js / Vercelで公開、GitHub: `roastia/slp-website`）。
+デザインは承認済みです。リデザインはせず、既存のデザインルールを守って修正・追加を行ってください。
 
-## Read before editing
+Artist詳細ページ（3組）・Catalog詳細ページ（8作品）は実装済みです。`HANDOFF_START_HERE.md` と `CLAUDE_HANDOFF.md` は着手当時のスナップショットのため、現状と食い違う記述があります。
 
-Read these files in this order and treat them as authoritative:
+## 作業の進め方（毎回守ること）
 
-1. `DESIGN_CONCEPT.md`
-2. `HANDOFF_START_HERE.md`
-3. `CLAUDE_HANDOFF.md`
+1. **作業の最初に `git pull` で最新の状態にする**（MacとWindowsの両方で作業しているため）
+2. ファイルの修正は、接続したフォルダ内の実ファイルを直接書き換える
+3. 修正のたびに **commit まで行う**（push はユーザーが行う）
+4. commit 後、ユーザーが実行する push 用コマンドを **1行で** 伝える。フォルダのパスはMacのものにする
+   - コード・CSS・TypeScriptを変更したとき（buildを含める）:
+     ```
+     cd "~/Documents/slp-next"; npm run build; git push
+     ```
+   - README・ドキュメントなど文章だけの変更（buildは不要）:
+     ```
+     cd "~/Documents/slp-next"; git push
+     ```
+5. 修正内容に応じて、README の更新が必要な場合は更新する（同じ commit に含める）
+6. ZIPでの納品は不要
 
-`reference-static/` is visual and implementation history only. Files inside it are not current instructions.
+## 最初に読むファイル
 
-## Primary task
+1. `DESIGN_CONCEPT.md` — デザインルールと決定経緯（最優先）
+2. `README.md` — 起動方法と現在の構成
 
-- Build detail pages for all 3 artists and all 8 catalog releases listed in `CLAUDE_HANDOFF.md`.
-- Preserve every legacy URL listed there.
-- Extend `data/artists.ts` and `data/releases.ts`; do not duplicate verified content across components.
-- Use the two routes under `app/templates/` as the visual starting point.
-- Change list-card links to internal pages only after the corresponding detail page exists.
+`reference-static/` は移行前の表示・実装を確認するための履歴です。現在の指示ではありません。
 
-## Non-negotiable rules
+## デザインの非交渉ルール
 
-- Use only black and white. Use opacity for intermediate hierarchy.
-- Do not introduce divider lines, underlines, dotted rules, decorative borders, accent colors, shadows, or default rounded-card styling.
-- Use General Sans only.
-- Keep the Catalog and Artists grids identical.
-- Keep images in color; never apply grayscale.
-- Do not add decorative numbers, catalog counters, release counts, or artist counts.
-- Preserve motion controls, reduced-motion support, transitions, mobile menu behavior, and responsive behavior down to 320px.
-- Do not invent biographies, track titles, dates, credits, links, or other facts. Use the existing official site as the primary source and mark unresolved facts `[要確認]`.
+- 色は黒と白のみ。中間の階層は透明度で表現する
+- 罫線・下線・点線・装飾的な枠線・アクセントカラー・影・標準的な角丸カードを使わない
+- フォントは General Sans のみ
+- Catalog と Artists のグリッドは同一に保つ
+- 画像はカラーのまま使う（グレースケール禁止）
+- 装飾的な番号、カタログ番号、リリース数・アーティスト数などの件数表示を付けない
+- MOTION ON / OFF、reduced-motion対応、ページ遷移、モバイルメニュー、320px幅までのレスポンシブを維持する
+- 経歴・曲名・日付・クレジット・リンクなどの事実を創作しない。不明な事実は `[要確認]` と明記する
 
-## Technical rules
+## 技術ルール
 
-- Preserve Next.js App Router, TypeScript, Tailwind CSS, the lockfile, and the current component architecture.
-- Use Server Components by default. Use Client Components only for interactive behavior.
-- Use static generation and page-specific metadata for detail pages.
-- Keep template routes noindex; completed public detail pages must be indexable.
-- Keep all relevant image `alt`, `width`, and `height` information.
-- Do not deploy, change DNS, or modify the production site unless explicitly requested.
+- Next.js App Router、TypeScript、Tailwind CSS、lockfile、現在のコンポーネント構成を維持する
+- Server Components を基本とし、操作が必要な部分だけ Client Components にする
+- 詳細ページは静的生成とページごとのメタデータ（`generateMetadata`）を使う
+- 一覧・詳細のデータは `data/` 配下で一元管理し、コンポーネント間で内容を重複させない
+- テンプレート用ルートは noindex、公開ページは index 可能にする
+- 画像の `alt`、`width`、`height` を保持する
+- 旧URLを維持する
+- 秘密情報（APIキーなど）はコミットしない。環境変数はVercel側に設定する
 
-## Required verification
+## 検証
 
-Run:
+コードを変更したときは、可能な範囲で次を確認する:
 
 ```bash
-npm ci
-npm run validate
+npm run validate   # lint + build
 ```
 
-Before returning the project, verify internal links, legacy routes, metadata, sitemap entries, image references, mobile navigation, MOTION ON/OFF, and `[要確認]` items. Return the complete project as a ZIP with a concise change report.
+あわせて、内部リンク、メタデータ、sitemap、画像参照、モバイル表示、MOTION ON/OFF に影響がないかを確認する。
