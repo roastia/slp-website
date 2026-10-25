@@ -23,7 +23,7 @@ export function Hero() {
     >
       <h1 ref={titleRef} data-reveal>SLP</h1>
       <p className="sub" data-reveal>
-        record label — signal from fukuoka. techno, ambient, post rock, minimal, pop, electro, electronica, dance, world.
+        record label — from fukuoka. techno, ambient, post rock, minimal, pop, electro, electronica, dance, world.
       </p>
     </section>
   );
