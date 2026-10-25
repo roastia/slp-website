@@ -10,14 +10,14 @@ Artist詳細ページ（3組）・Catalog詳細ページ（8作品）は実装�
 1. **作業の最初に `git pull` で最新の状態にする**（MacとWindowsの両方で作業しているため）
 2. ファイルの修正は、接続したフォルダ内の実ファイルを直接書き換える
 3. 修正のたびに **commit まで行う**（push はユーザーが行う）
-4. commit 後、ユーザーが実行する push 用コマンドを **1行で** 伝える。フォルダのパスはMacのものにする
+4. commit 後、ユーザーがMacのターミナルで実行する push 用コマンドを **1行で** 伝える（`~` はクォートで囲まない。`&&` でつなぎ、失敗したら次へ進まないようにする）
    - コード・CSS・TypeScriptを変更したとき（buildを含める）:
      ```
-     cd "~/Documents/slp-next"; npm run build; git push
+     cd ~/Documents/slp-next && npm run build && git push
      ```
    - README・ドキュメントなど文章だけの変更（buildは不要）:
      ```
-     cd "~/Documents/slp-next"; git push
+     cd ~/Documents/slp-next && git push
      ```
 5. 修正内容に応じて、README の更新が必要な場合は更新する（同じ commit に含める）
 6. ZIPでの納品は不要
